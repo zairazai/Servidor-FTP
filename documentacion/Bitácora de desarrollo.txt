@@ -93,4 +93,44 @@ Capturas de configuración del archivo vsftpd.conf.
 Captura de acceso anonimo 
 
 =============================================================================================================
+23-03-2026 2:20 pm
+4.Configuracion de usuarios y permisos=======================================================================
+
+actividades realizadas: 
+Se creó un usuario de prueba en el sistema para validar el acceso autenticado al servidor FTP.
+Se asignó el usuario a los grupos correspondientes (grupo específico y grupo general de escritura).
+Se configuró la carpeta personal del usuario dentro de la estructura del servidor FTP.
+Se establecieron los permisos adecuados en las carpetas general, de grupo y personal.
+Se configuró una vista personalizada para el usuario dentro del servidor FTP.
+Se implementaron enlaces simbólicos inicialmente para estructurar el acceso a los directorios.
+Se detectó que los enlaces simbólicos no permitían la navegación dentro del servicio FTP.
+Se identificó que la limitación estaba relacionada con restricciones de seguridad del servicio vsftpd al usar chroot.
+Se sustituyeron los enlaces simbólicos por bind mounts para presentar los directorios como rutas reales.
+Se crearon directorios físicos en la vista del usuario para montar las rutas necesarias.
+Se aplicaron montajes tipo bind para las carpetas general, de grupo y personal.
+Se verificó que los montajes se aplicaron correctamente mediante comandos de sistema.
+Se reinició el servicio vsftpd para aplicar los cambios realizados.
+Se validó el acceso autenticado al servidor FTP desde el cliente.
+Se comprobó la correcta visualización de la estructura de directorios del usuario.
+Se verificó la navegación entre directorios dentro del entorno FTP.
+Se realizaron pruebas de escritura en las diferentes carpetas del servidor.
+Se validó la transferencia de archivos desde el cliente hacia el servidor utilizando el comando put.
+Se confirmó el almacenamiento correcto de los archivos dentro de las rutas correspondientes en el servidor.
+
+=evidencias==================================================================================================
+Capturas de creación y configuración del usuario.
+Capturas de asignación de grupos.
+Capturas de configuración de permisos en directorios.
+Capturas de los comandos utilizados para implementar bind mounts.
+Capturas de verificación de montajes activos.
+Capturas de acceso exitoso al servidor FTP.
+Capturas de transferencia de archivos mediante FTP.
+Capturas de verificación de archivos en el servidor.
+=problemas===================================================================================================
+
+El usuario autenticado no podía acceder a los directorios mediante FTP.
+Se presentó un error al intentar cambiar de directorio debido al uso de enlaces simbólicos.
+El servicio vsftpd restringía el acceso a enlaces simbólicos en entornos con chroot habilitado.
+Se identificaron restricciones relacionadas con permisos en rutas intermedias del sistema.
+
 
