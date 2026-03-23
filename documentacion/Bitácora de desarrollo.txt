@@ -80,6 +80,9 @@ Se agregaron parámetros adicionales en el archivo vsftpd.conf para configurar e
 Se definió la carpeta raíz del usuario anónimo.
 Se habilitó el uso de chroot para restringir usuarios a su directorio.
 Se configuró el parámetro allow_writeable_chroot para permitir escritura sin errores.
+Se confirmó que el servicio se inicia correctamente sin errores.
+Se realizó una prueba de conexión FTP desde el cliente.
+Se validó el acceso anónimo al servidor FTP.
 
 =evidencias==================================================================================================
 Capturas de instalación del servicio.
@@ -87,6 +90,7 @@ Capturas del estado del servicio.
 Capturas de la estructura de carpetas.
 Capturas de creación de grupos.
 Capturas de configuración del archivo vsftpd.conf.
+Captura de acceso anonimo 
 
 =============================================================================================================
 
