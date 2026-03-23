@@ -2,7 +2,7 @@ Bitácora de desarrollo
 
 ==22-03-2026==================================================================
 05:40 pm 
-=Preparación del entorno=====================================================
+=1. Preparación del entorno=====================================================
 
 Actividades realizadas
 Se creó la estructura del proyecto en el equipo real.
@@ -27,4 +27,42 @@ Captura del repositorio en GitHub con archivos visibles.
 
 Error al realizar el push inicial indicando que no existían commits en la rama.
 Se corrigió realizando primero el commit antes de hacer el push.
+=============================================================================================================
+06:40 pm 
+
+=2. Configuración de red y validación de ips====================================================================
+
+actividades realizadas: 
+
+Se verificó el estado inicial de las máquinas virtuales utilizadas en la práctica.
+Se configuraron las interfaces de red de cada máquina virtual.
+Se asignó un adaptador en modo NAT para permitir acceso a internet.
+Se configuró un segundo adaptador en modo red interna con el nombre "red_sistemas".
+Se aseguró que todas las máquinas virtuales utilizaran la misma red interna.
+Se encendieron las máquinas virtuales para continuar con la configuración.
+Se obtuvieron las direcciones IP de cada equipo utilizando comandos de sistema.
+Se identificó que los servidores contaban con direcciones IP estáticas previamente configuradas.
+Se detectó que el cliente no contaba con dirección IP IPv4 en la red interna.
+Se configuró manualmente una dirección IP estática en el cliente mediante netplan.
+Se corrigieron errores de sintaxis en el archivo de configuración YAML.
+Se ajustaron los permisos del archivo de configuración de red para cumplir con las recomendaciones del sistema.
+Se aplicaron los cambios de configuración de red.
+Se verificó la asignación correcta de la dirección IP en el cliente.
+Se realizaron pruebas de conectividad mediante comandos ping entre las máquinas virtuales.
+Se confirmó la comunicación exitosa entre el cliente y los servidores.
+Se configuró una carpeta compartida entre el host y las máquinas virtuales.
+Se verificó el acceso a la carpeta compartida desde los distintos sistemas.
+
+=evidencias==================================================================================================
+
+Capturas de configuración de red en VirtualBox.
+Capturas de direcciones IP en cada máquina virtual.
+=problemas===================================================================================================
+
+El cliente no obtenía dirección IP automáticamente en la red interna.
+Se presentaron errores de sintaxis en el archivo de configuración de netplan debido a una incorrecta indentación.
+Se generaron advertencias relacionadas con los permisos del archivo de configuración.
+Se observó que el sistema utilizó un método alternativo para aplicar la configuración de red.
+==============================================================================================================
+
 
