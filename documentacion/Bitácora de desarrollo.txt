@@ -64,5 +64,29 @@ Se presentaron errores de sintaxis en el archivo de configuración de netplan de
 Se generaron advertencias relacionadas con los permisos del archivo de configuración.
 Se observó que el sistema utilizó un método alternativo para aplicar la configuración de red.
 ==============================================================================================================
+9:00 pm 
+=3. Configuración Servidor FTP en Linux   ====================================================================
 
+actividades realizadas: 
+
+Se instaló el servicio vsftpd en el servidor Ubuntu.
+El servicio vsftpd se encontraba inactivo después de la instalación.
+Se inició manualmente el servicio utilizando systemctl.
+Se habilitó el servicio para ejecutarse automáticamente al iniciar el sistema.
+Se verificó que el servicio se encuentra activo y en ejecución.
+Se creó la estructura base de directorios para el servidor FTP.
+Se crearon los grupos requeridos (reprobados y recursadores).
+Se agregaron parámetros adicionales en el archivo vsftpd.conf para configurar el acceso anónimo.
+Se definió la carpeta raíz del usuario anónimo.
+Se habilitó el uso de chroot para restringir usuarios a su directorio.
+Se configuró el parámetro allow_writeable_chroot para permitir escritura sin errores.
+
+=evidencias==================================================================================================
+Capturas de instalación del servicio.
+Capturas del estado del servicio.
+Capturas de la estructura de carpetas.
+Capturas de creación de grupos.
+Capturas de configuración del archivo vsftpd.conf.
+
+=============================================================================================================
 
