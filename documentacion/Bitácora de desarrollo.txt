@@ -94,7 +94,7 @@ Captura de acceso anonimo
 
 =============================================================================================================
 23-03-2026 2:20 pm
-4.Configuracion de usuarios y permisos=======================================================================
+=4.Configuracion de usuarios y permisos=======================================================================
 
 actividades realizadas: 
 Se creó un usuario de prueba en el sistema para validar el acceso autenticado al servidor FTP.
@@ -126,11 +126,50 @@ Capturas de verificación de montajes activos.
 Capturas de acceso exitoso al servidor FTP.
 Capturas de transferencia de archivos mediante FTP.
 Capturas de verificación de archivos en el servidor.
+
 =problemas===================================================================================================
 
 El usuario autenticado no podía acceder a los directorios mediante FTP.
 Se presentó un error al intentar cambiar de directorio debido al uso de enlaces simbólicos.
 El servicio vsftpd restringía el acceso a enlaces simbólicos en entornos con chroot habilitado.
 Se identificaron restricciones relacionadas con permisos en rutas intermedias del sistema.
+==============================================================================================================
+9:48 pm
+=4.Configuracion de usuarios y permisos=======================================================================
+
+actividades realizadas:
+
+Se desarrolló y ajustó un script de automatización para la instalación y configuración del servidor FTP utilizando vsftpd.
+Se implementó la validación de idempotencia para evitar configuraciones duplicadas.
+Se crearon grupos de usuarios (reprobados, recursadores y ftpwriters).
+Se generó la estructura de directorios del servidor FTP.
+Se configuraron los permisos de acceso mediante chmod, chown y grupos.
+Se implementó la lógica de usuarios con vistas personalizadas mediante bind mounts.
+Se permitió el acceso autenticado con permisos de escritura en carpetas específicas.
+Se configuró el acceso anónimo restringido a la carpeta pública en modo solo lectura.
+Se realizaron pruebas funcionales desde el cliente FTP.
+
+=evidencias==================================================================================================
+
+Eejcucion del script de automatización.
+Creación y validación de usuarios.
+Visualización de estructura de directorios desde FTP.
+Pruebas de acceso y navegación en carpetas.
+Pruebas de escritura en carpetas permitidas.
+Cambio de grupo de usuario mediante re-ejecución del script.
+Acceso anónimo restringido a la carpeta pública.
+Validación de que el usuario anónimo no tiene permisos de escritura.
+
+=problemas===================================================================================================
+
+Error en nombres de funciones dentro del script, lo que provocó fallos en la ejecución.
+Duplicidad de funciones que generaba comportamientos inesperados.
+Problemas iniciales con los permisos de directorios que impedían el acceso correcto vía FTP.
+Error en la visualización de carpetas debido a una configuración incorrecta de anon_root.
+El script sobrescribía configuraciones manuales, lo que requería ajustar directamente el código del script.
+Dificultades en la implementación de bind mounts para reflejar correctamente la estructura de carpetas por usuario.
+Confusión en la navegación dentro del FTP al no considerar el directorio raíz asignado.
+
+
 
 
