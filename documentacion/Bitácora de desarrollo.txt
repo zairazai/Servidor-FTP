@@ -1,6 +1,6 @@
 Bitácora de desarrollo 
 
-==22-03-2026==================================================================
+==22-03-2026==================================================================LINUX
 05:40 pm 
 =1. Preparación del entorno=====================================================
 
@@ -170,6 +170,43 @@ El script sobrescribía configuraciones manuales, lo que requería ajustar direc
 Dificultades en la implementación de bind mounts para reflejar correctamente la estructura de carpetas por usuario.
 Confusión en la navegación dentro del FTP al no considerar el directorio raíz asignado.
 
+==29-03-2026==================================================================
+10:00pm
 
+=5.Configuración de Windows Server================================================
+
+actividades realizadas:
+
+Se inició la preparación del entorno en Windows Server para la implementación del servicio FTP.
+Se verificó la disponibilidad de los roles y características necesarias para IIS y FTP.
+Se identificó el estado actual del servidor antes de realizar la instalación del servicio.
+Se preparó el entorno para continuar con la configuración automatizada mediante PowerShell.
+
+10:55
+Se instaló el rol Web Server (IIS) junto con el servicio FTP mediante PowerShell.
+Se incluyeron herramientas de administración para la gestión del servidor.
+Se verificó la correcta instalación de los componentes necesarios para el servicio FTP.
+
+
+=evidencias==================================================================================================
+
+- Capturas de verificación de roles IIS y FTP.
+- Capturas de comandos de PowerShell ejecutados en Windows Server.
+-Captura de instalación FTP 
+-Captura de servicios instalados de FTP
+
+=6.Estructura de carpetas=================================================================
+
+actividades realizadas:
+
+Se creó la estructura base de directorios del servidor FTP en Windows Server.
+Se definió la carpeta raíz C:\FTP y sus subdirectorios: general, reprobados, recursadores y usuarios.
+Se utilizó PowerShell para automatizar la creación de las carpetas.
+Se verificó la correcta generación de la estructura mediante comandos de sistema.
+
+
+=evidencias================================================================================
+Captura creación de estructura de carpetas
+Captura de verificación de carpetas recién creadas
 
 
