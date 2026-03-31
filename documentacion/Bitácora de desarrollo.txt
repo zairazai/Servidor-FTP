@@ -209,4 +209,43 @@ Se verificó la correcta generación de la estructura mediante comandos de siste
 Captura creación de estructura de carpetas
 Captura de verificación de carpetas recién creadas
 
+=7.Crear grupos locales y usuarios =================================================================
+30-03-2026 
+
+actividades realizadas:
+Se crearon los grupos locales necesarios para la gestión de permisos del servidor FTP.
+Se definieron los grupos reprobados, recursadores y ftpwriters.
+Se utilizó PowerShell para automatizar la creación de los grupos.
+Se verificó la existencia de los grupos mediante comandos del sistema.
+Se crearon usuarios locales para pruebas del servicio FTP.
+Se asignaron usuarios a sus respectivos grupos de acuerdo a su categoría.
+Se agregó cada usuario al grupo común de escritura.
+Se validó la correcta asignación de usuarios a grupos.
+
+=evidencias================================================================================
+
+Captura de creación y verificación de grupos locales
+Captura de creación de usuarios
+Captura de usuarios asignados
+
+=8.Permisos NTFS=================================================================
+30-03-2026 
+6:40 pm 
+actividades realizadas:
+Se configuraron los permisos NTFS para el control de acceso a las carpetas del servidor FTP.
+Se restringió el acceso a carpetas según los grupos definidos.
+Se asignaron permisos de lectura para acceso anónimo en la carpeta pública.
+Se asignaron permisos de modificación a usuarios autenticados mediante el grupo ftpwriters.
+Se validó la correcta asignación de permisos mediante comandos del sistema.
+=evidencias================================================================================
+
+Captura de permisos asignados 
+Captura de verificación de permisos
+
+=problemas===================================================================================================
+Se configuraron los permisos NTFS para el control de acceso a las carpetas del servidor FTP.
+Se restringió el acceso a carpetas según los grupos definidos.
+Se asignaron permisos de lectura para acceso anónimo en la carpeta pública.
+Se asignaron permisos de modificación a usuarios autenticados mediante el grupo ftpwriters.
+Se validó la correcta asignación de permisos mediante comandos del sistema.
 
