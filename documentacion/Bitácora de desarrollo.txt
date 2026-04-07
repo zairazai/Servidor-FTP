@@ -249,3 +249,30 @@ Se asignaron permisos de lectura para acceso anónimo en la carpeta pública.
 Se asignaron permisos de modificación a usuarios autenticados mediante el grupo ftpwriters.
 Se validó la correcta asignación de permisos mediante comandos del sistema.
 
+=8.Crear sitio FTP en IIS,Configurar autenticación y reglas de autorización=================================
+07-04.2026
+12:11 am
+actividades realizadas:
+ Se creó el sitio FTP en IIS apuntando a la ruta C:\FTP.
+Se verificó que el sitio FTP-Sistemas se encontrara activo y correctamente enlazado al puerto 21.
+Se configuró la autenticación del sitio FTP, habilitando acceso anónimo y autenticación básica.
+Se realizaron múltiples intentos para configurar las reglas de autorización mediante PowerShell (cmdlets de WebAdministration).
+Debido a errores en la interpretación de rutas y filtros, se optó por utilizar la herramienta appcmd para aplicar la configuración.
+Se agregaron reglas de autorización para permitir acceso anónimo en modo lectura y acceso autenticado mediante el grupo ftpwriters con permisos de lectura y escritura.
+Se validó la correcta aplicación de las reglas de autorización mediante comandos de verificación.
+Se reinició IIS para aplicar los cambios.
+
+=evidencias================================================================================
+
+Capturas de la creación del sitio FTP en IIS.
+Captura de verificación de reglas de autorización configuradas.
+Captura del reinicio del servicio IIS.
+
+=problemas===================================================================================================
+
+Se presentaron múltiples errores al configurar la autorización del sitio FTP debido a rutas incorrectas en los cmdlets de PowerShell.
+Los comandos Set-WebConfigurationProperty y Clear-WebConfiguration no lograban ubicar correctamente la configuración del sitio FTP.
+Se presentaron errores de sintaxis al utilizar appcmd, especialmente en el uso de parámetros y estructura de los atributos.
+Fue necesario realizar varios ajustes hasta identificar la forma correcta de aplicar las reglas de autorización.
+Inicialmente solo se configuró la regla para usuarios autenticados, omitiendo la regla de acceso anónimo, lo cual fue detectado y corregido posteriormente.
+
