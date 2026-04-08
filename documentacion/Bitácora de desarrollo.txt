@@ -261,18 +261,30 @@ Debido a errores en la interpretación de rutas y filtros, se optó por utilizar
 Se agregaron reglas de autorización para permitir acceso anónimo en modo lectura y acceso autenticado mediante el grupo ftpwriters con permisos de lectura y escritura.
 Se validó la correcta aplicación de las reglas de autorización mediante comandos de verificación.
 Se reinició IIS para aplicar los cambios.
+Se recreó el sitio FTP en IIS para corregir inconsistencias previas en la configuración.
+Se configuraron correctamente autenticación anónima y básica.
+Se establecieron reglas de autorización para acceso anónimo (solo lectura) y usuarios autenticados (lectura y escritura).
+Se validó el acceso anónimo al servidor FTP.
+Se comprobó que el usuario anónimo puede navegar y visualizar contenido.
+Se verificó que el usuario anónimo no puede subir archivos.
 
 =evidencias================================================================================
 
 Capturas de la creación del sitio FTP en IIS.
 Captura de verificación de reglas de autorización configuradas.
 Captura del reinicio del servicio IIS.
-
+Captura de sitio FTP eliminado
+Captura de recreación sitio FTP 
+Acceso de Anonymous desde cliente al srvicio FTP 
+Captura de que no se puede escribir desde Anonymous es solo lectura
 =problemas===================================================================================================
 
 Se presentaron múltiples errores al configurar la autorización del sitio FTP debido a rutas incorrectas en los cmdlets de PowerShell.
 Los comandos Set-WebConfigurationProperty y Clear-WebConfiguration no lograban ubicar correctamente la configuración del sitio FTP.
 Se presentaron errores de sintaxis al utilizar appcmd, especialmente en el uso de parámetros y estructura de los atributos.
 Fue necesario realizar varios ajustes hasta identificar la forma correcta de aplicar las reglas de autorización.
-Inicialmente solo se configuró la regla para usuarios autenticados, omitiendo la regla de acceso anónimo, lo cual fue detectado y corregido posteriormente.
-
+Se detectó que la configuración del sitio FTP estaba inconsistente debido a múltiples cambios realizados por diferentes métodos.
+Se optó por eliminar el sitio FTP existente y recrearlo desde cero mediante la interfaz gráfica de IIS.
+Se configuraron nuevamente autenticación, autorización, SSL y aislamiento de usuarios.
+Se aplicaron permisos NTFS adecuados en la carpeta raíz del servicio.
+Tras la recreación del sitio, el acceso FTP anónimo funcionó correctamente.
