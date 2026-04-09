@@ -267,6 +267,9 @@ Se establecieron reglas de autorización para acceso anónimo (solo lectura) y u
 Se validó el acceso anónimo al servidor FTP.
 Se comprobó que el usuario anónimo puede navegar y visualizar contenido.
 Se verificó que el usuario anónimo no puede subir archivos.
+Se verificó la persistencia de archivos transferidos mediante FTP en el sistema de archivos del servidor Windows.
+Se comprobó que los archivos subidos por usuarios autenticados aparecen correctamente en sus respectivas carpetas.
+Se confirmó la correcta sincronización entre el cliente FTP y el almacenamiento en el servidor.
 
 =evidencias================================================================================
 
@@ -275,8 +278,10 @@ Captura de verificación de reglas de autorización configuradas.
 Captura del reinicio del servicio IIS.
 Captura de sitio FTP eliminado
 Captura de recreación sitio FTP 
-Acceso de Anonymous desde cliente al srvicio FTP 
+Acceso de Anonymous desde cliente al servicio FTP 
 Captura de que no se puede escribir desde Anonymous es solo lectura
+Pruebas de usuario 1 y 2 de escritura y acceso denegado 
+Reasignación de permisos
 =problemas===================================================================================================
 
 Se presentaron múltiples errores al configurar la autorización del sitio FTP debido a rutas incorrectas en los cmdlets de PowerShell.
@@ -288,3 +293,4 @@ Se optó por eliminar el sitio FTP existente y recrearlo desde cero mediante la 
 Se configuraron nuevamente autenticación, autorización, SSL y aislamiento de usuarios.
 Se aplicaron permisos NTFS adecuados en la carpeta raíz del servicio.
 Tras la recreación del sitio, el acceso FTP anónimo funcionó correctamente.
+Los usuarios pueden ver todas las carpetas. Aunque no puedan entrar
