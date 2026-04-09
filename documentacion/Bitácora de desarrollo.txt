@@ -229,8 +229,8 @@ Captura de creación de usuarios
 Captura de usuarios asignados
 
 =8.Permisos NTFS=================================================================
-30-03-2026 
-6:40 pm 
+08-04-2026
+2:40 pm 
 actividades realizadas:
 Se configuraron los permisos NTFS para el control de acceso a las carpetas del servidor FTP.
 Se restringió el acceso a carpetas según los grupos definidos.
@@ -294,3 +294,34 @@ Se configuraron nuevamente autenticación, autorización, SSL y aislamiento de u
 Se aplicaron permisos NTFS adecuados en la carpeta raíz del servicio.
 Tras la recreación del sitio, el acceso FTP anónimo funcionó correctamente.
 Los usuarios pueden ver todas las carpetas. Aunque no puedan entrar
+
+=9.Script y  pruebas finales=================================================================
+=evidencias================================================================================
+08-04-2026
+6:40 pm 
+actividades realizadas:
+Se ejecutó el script PowerShell de automatización para Windows Server.
+Se verificó la instalación de IIS y del servicio FTP.
+Se validó la existencia de grupos locales requeridos.
+Se verificó la estructura de carpetas del servidor FTP.
+Se reaplicaron permisos NTFS base.
+Se comprobó la existencia y estado del sitio FTP en IIS.
+Se configuraron autenticación, SSL y aislamiento de usuarios desde el script.
+Se procesó la creación o actualización de usuarios de prueba.
+Se validó la lógica de idempotencia al ejecutar nuevamente el script sobre un entorno ya configurado.
+
+=evidencias===================================================================================================
+Capturas de ejecución del script.
+Capturas de verificación de componentes instalados.
+Capturas de mensajes de validación de grupos y directorios.
+Capturas del ingreso de usuarios de prueba.
+Capturas de la creación o actualización de usuarios.
+Captura del mensaje final de configuración completada.
+
+=problemas===================================================================================================
+
+La sección de autorización FTP en IIS continuó presentando comportamiento inconsistente al intentar automatizarse totalmente desde PowerShell.
+A pesar de ello, la configuración principal del entorno sí pudo automatizarse correctamente.
+La autorización final del sitio ya había sido validada previamente mediante configuración en IIS.
+
+
